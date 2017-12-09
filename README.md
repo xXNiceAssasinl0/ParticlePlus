@@ -9,3 +9,5 @@
  * ImagicalGamer - Main Developer.
  
  * xXNiceYT - API Updater.
+
+ * LoverBoy - Found on his channel.
