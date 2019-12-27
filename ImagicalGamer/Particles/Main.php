@@ -11,7 +11,7 @@ use pocketmine\plugin\Plugin;
 use pocketmine\level\particle\DustParticle;
 
 use pocketmine\math\Vector3;
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task;
 /* Copyright (C) ImagicalGamer - All Rights Reserved
  * Unauthorized copying of this file, via any medium is strictly prohibited
  * Proprietary and confidential
@@ -21,14 +21,13 @@ use pocketmine\scheduler\PluginTask;
 class Main extends PluginBase implements Listener{
 
   public function onEnable(){
-    $this->getServer()->getScheduler()->scheduleRepeatingTask(new ParticlesPlus($this), 10);
+    $this->getScheduler()->scheduleRepeatingTask(new ParticlesPlus($this), 10);
   }
 }
-class ParticlesPlus extends PluginTask {
+class ParticlesPlus extends Task {
   public function __construct($plugin)
   {
     $this->plugin = $plugin;
-    parent::__construct($plugin);
   }
 
   public function onRun($tick){
